@@ -1,5 +1,5 @@
-<h1>Hello World</h1>
+<turbo-frame id="blogs">
+  <h2>Latest Blogs</h2>
+  <%= render @blogs %>
+</turbo-frame>
 
-<% @blogs.each do |blog| %>
-  <h3><%= blog.title %></h3>
-<% end %>
