@@ -1,4 +1,6 @@
-<div class="card card--dark" />
-  <%= blog.title %>
-  <%= blog.content %>
-</div>
+<%= link_to blog do %>
+  <div class="block p-6 w-full bg-white rounded-lg border border-gray-200 shadow-sm">
+    <h2 class="mb-2 text-xl font-semibold"><%= blog.title %></h2>
+    <p class="text-gray-700 line-clamp-3"><%= blog.content %></p>
+  </div>
+<% end %>

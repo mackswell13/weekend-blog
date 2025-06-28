@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   def index
-    @blogs = Blog.first(5)
+    @blogs = Blog.order(created_at: :desc).limit(5)
   end
 
   def new
@@ -10,7 +10,7 @@ class BlogsController < ApplicationController
   def create
     @blog = Blog.new(blog_params)
     if @blog.save
-      redirect_to blogs_path
+      redirect_to root_path
     else
       render :new
     end
