@@ -1,0 +1,2 @@
+module LinkedBlogsHelper
+end

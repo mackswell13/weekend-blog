@@ -1,20 +1,20 @@
-class BlogsController < ApplicationController
+class LinkedBlogsController < ApplicationController
   before_action :set_blog, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @blogs = Blog.order(created_at: :desc).limit(5)
+    @links = Blog.order(created_at: :desc).limit(5)
   end
 
   def show
   end
 
   def new
-    @blog = Blog.new
+    @link = Blog.new
   end
 
   def create
-    @blog = Blog.new(blog_params)
-    if @blog.save
+    @link = Blog.new(blog_params)
+    if @link.save
       redirect_to root_path
     else
       render :new
@@ -25,25 +25,25 @@ class BlogsController < ApplicationController
   end
 
   def update
-    if @blog.update(blog_params)
-      redirect_to @blog
+    if @link.update(blog_params)
+      redirect_to @link
     else
       render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @blog.destroy
+    @link.destroy
     redirect_to blogs_path
   end
 
   private
 
   def set_blog
-    @blog = Blog.find(params[:id])
+    @link = Blog.find(params[:id])
   end
 
   def blog_params
-    params.require(:blog).permit(:title, :content)
+    params.require(:blog).permit(:title, :link)
   end
 end

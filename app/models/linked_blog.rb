@@ -1,0 +1,2 @@
+class LinkedBlog < ApplicationRecord
+end

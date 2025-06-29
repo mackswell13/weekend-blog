@@ -9,7 +9,6 @@
       <%= form.rich_textarea :content %>
     </div>
 
-    <%= form.submit class: "p-2 mt-2 text-white bg-blue-600 rounded-lg" %>
-    <%= link_to "Cancel", root_path, method: :get, form: { data: { turbo_frame: "create-blog" } }, class: "btn btn-secondary" %>
+    <%= form.submit class: "p-2 mt-2 text-white bg-blue-600 rounded-lg cursor-pointer" %>
   <% end %>
 </div>
