@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_29_171833) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_29_190800) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -61,6 +61,16 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_29_171833) do
     t.string "href"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "resume_bullets", force: :cascade do |t|
+    t.string "job_title", null: false
+    t.datetime "start_date", null: false
+    t.datetime "end_date"
+    t.string "company"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_title"], name: "index_resume_bullets_on_job_title", unique: true
   end
 
   create_table "sessions", force: :cascade do |t|

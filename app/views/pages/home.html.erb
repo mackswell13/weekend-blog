@@ -1,14 +1,42 @@
 <h1>Welcome to My Site!</h1>
 
-<% if @is_admin %>
-  <%= turbo_frame_tag "create-blog" do %>
-    <%= link_to "Create Blog", new_blog_path %>
-    <% end %>
-<% end %>
+<div class="flex flex-col gap-4">
+  <% if @resume_bullets.length > 0 %>
+    <div>
+      <h2><%= link_to "Recent Blog Posts", resume_bullets_path %></h2>
+      <div class="flex flex-col w-full">
+        <%= render @resume_bullets %>
+      </div>
+    </div>
+  <% end %>
 
-<% if @blogs.length > 0 %>
-  <h2><%= link_to "Recent Blog Posts", blogs_path %></h2>
-  <div class="grid gap-4 lg:grid-cols-3 sm:grid-cols-1">
-    <%= render @blogs %>
+  <% if @blogs.length > 0 %>
+    <div>
+      <h2><%= link_to "Recent Blog Posts", blogs_path %></h2>
+      <div class="grid gap-4 lg:grid-cols-3 sm:grid-cols-1">
+        <%= render @blogs %>
+      </div>
+    </div>
+  <% end %>
+
+  <% if @links.length > 0 %>
+    <div>
+      <h2><%= link_to "Other Links", linked_blogs_path %></h2>
+      <div class="grid gap-4 lg:grid-cols-3 sm:grid-cols-1">
+        <%= render @links %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<% if @is_admin %>
+  <div class="mt-4">
+    <%= turbo_frame_tag "create-item" do %>
+      <div class="flex flex-row gap-3 w-full">
+        <%= render "shared/button", text: "Create Blog", path: new_blog_path, frame_id: "create-blog" %>
+        <%= render "shared/button", text: "Create Link", path: new_linked_blog_path, frame_id: "create-link" %>
+      </div>
+    <% end %>
   </div>
 <% end %>
+

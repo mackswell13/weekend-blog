@@ -1,4 +1,5 @@
 class LinkedBlogsController < ApplicationController
+  before_action :set_link, only: [ :destroy ]
 
   def index
     @links = LinkedBlog.order(created_at: :desc).limit(5)
@@ -11,10 +12,15 @@ class LinkedBlogsController < ApplicationController
   def create
     @link = LinkedBlog.new(blog_params)
     if @link.save
-      redirect_to linked_blogs_path
+      redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @link.destroy
+    redirect_to linked_blogs_path
   end
 
   private

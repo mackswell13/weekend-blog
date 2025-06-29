@@ -1,4 +1,4 @@
-<div class="block p-6 w-full bg-white rounded-lg border border-gray-200 shadow-sm">
+<div class="p-6 w-full bg-white rounded-lg border border-gray-200 shadow-sm">
 
   <%= form_with model: blog do |form| %>
     <div class="flex flex-col gap-y-2">
@@ -9,6 +9,7 @@
       <%= form.rich_textarea :content %>
     </div>
 
-    <%= form.submit class: "p-2 mt-2 text-white bg-blue-600 rounded-lg cursor-pointer" %>
+    <%= form.submit class: "p-2 mt-2 text-white bg-blue-500 rounded-lg cursor-pointer text-lg" %>
+    <%= link_to "Cancel", request.referer || root_path, class: "p-2 text-white bg-red-500 rounded-lg cursor-pointer text-lg" %>
   <% end %>
 </div>

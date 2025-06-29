@@ -1,0 +1,31 @@
+<div class="p-6 w-full bg-white rounded-lg border border-gray-200 shadow-sm">
+
+  <%= form_with model: resume_bullet do |form| %>
+    <div class="flex flex-col gap-y-2">
+      <%= form.label :job_title %>
+      <%= form.text_field :job_title, class: "py-1 px-1 rounded-sm border border-[#bbb]" %>
+
+      <%= form.label :company %>
+      <%= form.text_field :company, class: "py-1 px-1 rounded-sm border border-[#bbb]" %>
+
+      <div class="flex flex-row gap-10">
+        <div class="flex flex-col min-w-80">
+          <%= form.label :start_date %>
+          <%= form.date_field :start_date, class: "py-1 px-1 rounded-sm border border-[#bbb]" %>
+        </div>
+        
+        <div class="flex flex-col min-w-80">
+          <%= form.label :end_date %>
+          <%= form.date_field :end_date, class: "py-1 px-1 rounded-sm border border-[#bbb]" %>
+        </div>
+      </div>
+
+      <%= form.label :content %>
+      <%= form.rich_textarea :content %>
+    </div>
+
+    <%= form.submit class: "p-2 mt-2 text-white bg-blue-500 rounded-lg cursor-pointer text-lg" %>
+    <%= link_to "Cancel", request.referer || root_path, class: "p-2 text-white bg-red-500 rounded-lg cursor-pointer text-lg" %>
+  <% end %>
+</div>
+

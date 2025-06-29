@@ -1,6 +1,10 @@
 <%= link_to linked_blog.href do %>
   <div class="block p-6 w-full bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md hover:border-gray-300 transition duration-200">
     <h2 class="mb-2 text-xl font-semibold"><%= linked_blog.title %></h2>
+
+    <% if @is_admin %> 
+      <%= button_to "Trash", linked_blog_path(linked_blog), method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "bg-red-500 rounded-sm px-4 py-2 text-white cursor-pointer" %>
+    <% end %>
   </div>
 <% end %>
 

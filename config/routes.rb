@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :blogs
   resources :linked_blogs
+  resources :resume_bullets
 
   root "pages#home"
 
