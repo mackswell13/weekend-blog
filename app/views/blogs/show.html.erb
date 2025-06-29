@@ -1,0 +1,6 @@
+<h1><%= @blog.title %></h1>
+<div><%= @blog.content %></div>
+
+<% if @is_admin %>
+  <%= button_to "Delete", @blog, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "bg-red-500 rounded-sm p-2 text-white cursor-pointer" %>
+<% end %>

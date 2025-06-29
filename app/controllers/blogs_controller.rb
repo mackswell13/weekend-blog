@@ -1,6 +1,12 @@
 class BlogsController < ApplicationController
+  before_action :set_blog, only: [ :show, :destroy ]
+
+
   def index
     @blogs = Blog.order(created_at: :desc).limit(5)
+  end
+
+  def show
   end
 
   def new
@@ -14,6 +20,23 @@ class BlogsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+    @blog.destroy
+    redirect_to blogs_path
+  end
+
+  private
+
+  def set_blog
+    @blog = Blog.find(params[:id])
   end
 
   def blog_params
