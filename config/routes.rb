@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get "/home", to: "pages#home"
 
   resources :blogs
+  resources :linked_blogs
 
   root "pages#home"
 

@@ -1,0 +1,9 @@
+<h2>Links</h2>
+
+<%= turbo_frame_tag "create-link" do %>
+  <%= link_to "Create Link", new_linked_blog_path  %>
+<% end %>
+
+<div class="grid gap-4 lg:grid-cols-3 sm:grid-cols-1">
+  <%= render @links %>
+</div>
