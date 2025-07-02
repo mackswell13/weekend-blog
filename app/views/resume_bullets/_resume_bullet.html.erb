@@ -1,7 +1,7 @@
 <%= link_to resume_bullet do %>
   <div class="block p-6 w-full bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md hover:border-gray-300 transition duration-200">
     <h2 class="mb-2 text-xl font-semibold"><%= resume_bullet.job_title %></h2>
-    <p class="text-gray-700 line-clamp-3"><%= strip_tags(resume_bullet.content.body.to_s) %></p>
+    <p class="text-gray-700 line-clamp-3"><%= resume_bullet.content %></p>
   </div>
 <% end %>
 
