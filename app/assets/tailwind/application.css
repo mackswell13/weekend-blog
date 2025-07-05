@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
+@theme {
+  --font-display: "Oswald", sans-serif;
+  --font-body: "Times New Roman", sans-serif;
+  --font-mono: "Fira Code", monospace;
+}
 
 @layer base {
-
-  @font-face {
-    
-  }
-
-
+  
 
   h1 {
     @apply text-4xl sm:text-5xl font-bold leading-tight;
@@ -34,7 +34,7 @@
   }
 
   p {
-    @apply text-base leading-relaxed;
+    @apply text-base leading-relaxed font-body;
   }
 
   small {

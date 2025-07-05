@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
   private
 
   def set_is_admin
-    @is_admin = Current.user.is_admin
+    if Current.user
+      @is_admin = Current.user.is_admin
+    end
   end
 end
