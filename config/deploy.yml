@@ -2,7 +2,7 @@
 service: max_blog
 
 # Name of the container image.
-image: your-user/max_blog
+image: mackswell13/max_blog
 
 # Deploy to these servers.
 servers:
